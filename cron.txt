@@ -1,0 +1,8 @@
+				Setting Up a cron Job:
+
+	Configure cron as root via:
+$ sudo crontab -u root -e
+		-> 23 */10 * * * * sh /path/to/script
+
+	Check root's scheduled cron jobs via:
+$ sudo crontab -u root -l

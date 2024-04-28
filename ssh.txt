@@ -1,0 +1,40 @@
+				Step 1: Installing & Configuring SSH
+
+	Install openssh-server via:
+$ su -c "apt install openssh-server"
+
+	Configure SSH via:
+$ su -c "vi /etc/ssh/sshd_config"
+		-> 13 Port 4242
+		-> 32 PermitRootLogin no
+		
+	Check SSH status via:
+$ su -c "systemctl reload ssh"
+$ su -c "systemctl status ssh"
+
+				Step 2: Installing & Configuring UFW
+	
+	Install ufw via sudo apt install ufw:
+$ su -C "apt install ufw"
+
+	Enable Firewall via:
+$ su -
+		-> mdp root: *******
+# ufw enable
+
+	Allow incoming connections using Port 4242 via:
+# ufw allow 4242
+
+	Check UFW status via:
+# ufw status
+
+				Step 3: Connecting to Server via SSH
+				
+	SSH into your virtual machine using Port 4242 via:
+# ssh <username>@<ip-address> -p 4242
+		-> ssh zrmhz@10.11.200.161 -p 4242
+	
+	Terminate SSH session at any time via:
+# exit/ $ logout
+
+

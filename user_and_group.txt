@@ -1,0 +1,21 @@
+				Step 1: Creating a New User
+				
+	Create new user via:
+$ sudo adduser <username>
+
+	Verify newly-created user's password expiry information via:
+$ sudo chage -l <username>
+
+	change the date:
+$ sudo chage -m 2 -M 30 zrmhz
+
+				Step 2: Creating a New Group
+				
+	Create new user42 group via:
+$ sudo addgroup user42
+	
+	Add user to user42 group via:
+$ sudo usermod -aG user42 zrmhz
+
+	Verify whether user was successfully added to user42 group via:
+$ getent group user42
